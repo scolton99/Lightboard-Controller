@@ -1,0 +1,80 @@
+#root {
+    -fx-background-color: black;
+}
+
+#footer, #title {
+    -fx-font-family: "Gill Sans", sans-serif;
+}
+
+#footer {
+    -fx-font-size: 14px;
+    -fx-opacity: 0.6;
+}
+
+#title {
+    -fx-font-size: 36px;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
+
+#top .setting {
+    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+    -fx-background-color: black;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: lightgray;
+}
+
+#buttons Button {
+    -fx-background-color: black;
+    -fx-border-radius: 0;
+    -fx-border-width: 2;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+}
+
+#console {
+    -fx-background-color: black;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-width: 2px;
+    -fx-border-color: white;
+}
+
+#console Label {
+    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+}
+
+#command {
+    -fx-border-width: 0;
+    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+    -fx-border-radius: 0;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: lightgray;
+    -fx-background-radius: 0 0 0 0;
+    -fx-background-color: black;
+}
+
+#send {
+    -fx-border-radius: 0 0 0 0;
+    -fx-border-width: 0 0 0 0;
+    -fx-background-radius: 0 0 0 0;
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-text-fill: white;
+    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+    -fx-pref-height: 100%;
+}
+
+#commandBox {
+    -fx-background-color: black;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0 2 2 2;
+    -fx-border-color: white;
+}
+
+#status {
+    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+}

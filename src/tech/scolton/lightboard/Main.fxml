@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="tech.scolton.lightboard.Controller"
+            fx:id="root"
+            xmlns="https://javafx.com/javafx/2.2">
+    <padding><Insets top="10" bottom="10" left="10" /></padding>
+    <top>
+        <GridPane id="top" hgap="4" vgap="4">
+            <padding><Insets left="10" bottom="5" right="10" /></padding>
+            <Label GridPane.columnIndex="0" GridPane.columnSpan="7" GridPane.rowIndex="0" id="title" fx:id="title" text="Lightboard Controller" />
+            <Label styleClass="setting" id="hostLabel" fx:id="hostLabel" text="Host:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField styleClass="setting" id="host" fx:id="host" text="localhost" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label styleClass="setting" id="portLabel" fx:id="portLabel" text="Port:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField styleClass="setting" id="port" fx:id="port" text="55555" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+            <Label styleClass="setting" id="userLabel" fx:id="userLabel" text="User:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField styleClass="setting" id="user" fx:id="user" text="1" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+
+            <Label id="status" fx:id="status" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+        </GridPane>
+    </top>
+    <right>
+        <FlowPane id="buttons" fx:id="buttons" hgap="4.0" vgap="4.0" prefWrapLength="200.0">
+            <Button onAction="#addCommand" userData="Go_To_Cue" text="Go To Cue" prefWidth="92" prefHeight="92" />
+            <Button onAction="#addCommand" userData="Undo" text="Undo" prefWidth="92" prefHeight="92" />
+            <Button onAction="#addCommand" userData="+" text="+" prefWidth="92" prefHeight="92" />
+            <Button onAction="#addCommand" userData="Thru" text="Thru" prefWidth="92" prefHeight="92" />
+            <Button onAction="#addCommand" userData="Group" text="Group" prefWidth="92" prefHeight="92" />
+            <Button onAction="#addCommand" userData="Full" text="Full" prefWidth="92" prefHeight="92" />
+            <Button onAction="#addCommand" userData="At" text="At" prefWidth="92" prefHeight="92" />
+        </FlowPane>
+    </right>
+    <center>
+        <BorderPane id="activity" fx:id="activity">
+            <padding><Insets right="10" left="10" /></padding>
+            <center>
+                <VBox id="console" fx:id="console" prefHeight="100"/>
+            </center>
+            <bottom>
+                <AnchorPane id="commandBox">
+                    <TextField AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="75.0" id="command" fx:id="command" promptText="Enter command here" />
+                    <Button AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0" id="send" fx:id="send" text="Send" prefWidth="75" onAction="#sendCommand" />
+                </AnchorPane>
+            </bottom>
+        </BorderPane>
+    </center>
+    <bottom>
+        <AnchorPane>
+            <Text AnchorPane.rightAnchor="5.0" AnchorPane.bottomAnchor="0.0" id="footer" fx:id="footer" text="Copyright © 2017 Spencer Colton" textAlignment="RIGHT" />
+        </AnchorPane>
+    </bottom>
+</BorderPane>
