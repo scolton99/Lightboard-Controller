@@ -78,3 +78,18 @@
 #status {
     -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
 }
+
+#menuBar {
+    -fx-background-color: black;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+}
+
+#consoleMenuItem .label {
+    -fx-text-fill: white;
+}
+
+#menuBar Menu .label, #menuBar Menu {
+    -fx-text-fill: white;
+}
