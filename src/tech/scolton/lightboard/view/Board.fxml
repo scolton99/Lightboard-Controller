@@ -73,7 +73,7 @@
     <Button onAction="#addTextToCommand" GridPane.columnIndex="15" GridPane.rowIndex="7" userData="\@" fx:id="at" id="at" styleClass="consoleButton" text="At" />
     <Button onAction="#addTextToCommand" GridPane.columnIndex="16" GridPane.rowIndex="7" userData="Enter" fx:id="enter" id="enter" styleClass="consoleButton" text="Enter" />
 
-    <Button onAction="#addTextToCommand" GridPane.columnIndex="3" GridPane.rowIndex="6" GridPane.columnSpan="2" fx:id="stopBack" id="stopBack" styleClass="consoleButton" text="Stop&#10;Back" />
-    <Button onAction="#addTextToCommand" GridPane.columnIndex="3" GridPane.rowIndex="7" GridPane.columnSpan="2" fx:id="go" id="go" styleClass="consoleButton" text="Go" />
+    <Button onAction="#sendInstantly" userData="\$ Go_to_Cue Last #" GridPane.columnIndex="3" GridPane.rowIndex="6" GridPane.columnSpan="2" fx:id="stopBack" id="stopBack" styleClass="consoleButton" text="Back" />
+    <Button onAction="#sendInstantly" userData="Go 1 #" GridPane.columnIndex="3" GridPane.rowIndex="7" GridPane.columnSpan="2" fx:id="go" id="go" styleClass="consoleButton" text="Go" />
 
 </GridPane>

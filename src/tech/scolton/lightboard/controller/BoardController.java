@@ -1,5 +1,7 @@
 package tech.scolton.lightboard.controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventTarget;
 import javafx.fxml.FXML;
@@ -7,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.GridPane;
 import tech.scolton.lightboard.Main;
+
+import javax.swing.*;
 
 public class BoardController {
 
@@ -20,6 +24,13 @@ public class BoardController {
     public Button park, last, capture, next;
     public Button slash, sneak, remDim, home, out, select, full, qOnly, at, enter;
     public Button stopBack, go;
+
+    public void initialize() {
+        grandmaster.valueProperty().addListener((observable, oldValue, newValue) -> {
+            int val = newValue.intValue();
+            sendInstantly("Grandmaster 1 " + val + " #");
+        });
+    }
 
     @FXML
     public void addTextToCommand(ActionEvent ae) {
@@ -69,6 +80,19 @@ public class BoardController {
         }
 
         Main.getConsole().setTempCommand("");
+    }
+
+    public void sendInstantly(ActionEvent ae) {
+        EventTarget t = ae.getTarget();
+
+        assert(t instanceof Button);
+        String data = (String)((Button)t).getUserData();
+
+        Main.getConsole().sendDirect(data);
+    }
+
+    private void sendInstantly(String command) {
+        Main.getConsole().sendDirect(command);
     }
 
 }

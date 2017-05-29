@@ -10,6 +10,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="tech.scolton.lightboard.controller.MainController"
             fx:id="root"
@@ -42,7 +43,11 @@
         <BorderPane id="activity" fx:id="activity">
             <padding><Insets right="10" left="10" /></padding>
             <center>
-                <VBox id="console" fx:id="console" prefHeight="100"/>
+                <ScrollPane fx:id="consoleContainer">
+                    <content>
+                        <VBox id="console" fx:id="console" fillWidth="true" />
+                    </content>
+                </ScrollPane>
             </center>
             <bottom>
                 <AnchorPane id="commandBox">

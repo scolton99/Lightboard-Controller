@@ -1,15 +1,11 @@
 package tech.scolton.lightboard.controller;
 
-import com.sun.javafx.stage.WindowCloseRequestHandler;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -22,6 +18,7 @@ import java.io.IOException;
 
 public class MainController implements ConsoleListener {
 
+    @FXML public Menu viewMenu;
     @FXML private BorderPane root;
     @FXML private BorderPane activity;
     @FXML private Label title;
@@ -37,6 +34,7 @@ public class MainController implements ConsoleListener {
     @FXML private Text footer;
     @FXML private Label status;
     @FXML private MenuBar menuBar;
+    @FXML private ScrollPane consoleContainer;
 
     public MainController() throws IOException {
         Console c = Main.getConsole();
@@ -49,6 +47,12 @@ public class MainController implements ConsoleListener {
         this.user.focusedProperty().addListener(new OnFocusLost());
 
         this.command.textProperty().addListener(new OnTextChange());
+
+        this.console.heightProperty().addListener((observable, oldValue, newValue) -> {
+            consoleContainer.setHvalue((Double)newValue);
+
+            consoleContainer.setVvalue(1.0);
+        });
     }
 
     @FXML

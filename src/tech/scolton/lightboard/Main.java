@@ -4,8 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import tech.scolton.lightboard.model.Console;
 
 import java.util.ArrayList;
@@ -23,6 +23,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        Font.loadFont(getClass().getResourceAsStream("/tech/scolton/lightboard/view/UbuntuMono-R.ttf"), 16);
+        Font.loadFont(getClass().getResourceAsStream("/tech/scolton/lightboard/view/Roboto-Regular.ttf"), 16);
+
         console = new Console();
 
         primaryStage.setTitle("Lightboard Controller");
@@ -36,6 +39,8 @@ public class Main extends Application {
         primaryStage.show();
 
         stages.add(primaryStage);
+
+
     }
 
     public static Console getConsole() {

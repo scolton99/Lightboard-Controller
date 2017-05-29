@@ -60,6 +60,23 @@ public class Console {
         }
     }
 
+    public void sendDirect(String command) {
+        try {
+            DatagramPacket packet = new DatagramPacket(command.getBytes(), command.getBytes().length, InetAddress.getByName(Main.getHost()), Main.getPort());
+            DatagramSocket ds = new DatagramSocket();
+
+            ds.send(packet);
+
+            ds.close();
+        } catch (Exception e) {
+            if (e instanceof UnknownHostException) {
+                this.listeners.forEach(s -> s.setError("Error: unknown host " + Main.getHost()));
+            } else {
+                this.listeners.forEach(s -> s.setError("Error: " + e.getMessage()));
+            }
+        }
+    }
+
     public void registerListener(ConsoleListener listener) {
         this.listeners.add(listener);
     }

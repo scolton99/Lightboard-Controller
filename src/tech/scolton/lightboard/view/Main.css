@@ -3,7 +3,7 @@
 }
 
 #footer, #title {
-    -fx-font-family: "Gill Sans", sans-serif;
+    -fx-font-family: "Roboto";
 }
 
 #footer {
@@ -19,7 +19,7 @@
 }
 
 #top .setting {
-    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+    -fx-font-family: "Ubuntu Mono";
     -fx-background-color: black;
     -fx-background-radius: 0;
     -fx-border-radius: 0;
@@ -35,21 +35,27 @@
     -fx-text-fill: white;
 }
 
+#consoleContainer {
+    -fx-background: black;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+}
+
 #console {
     -fx-background-color: black;
     -fx-background-radius: 0;
     -fx-border-radius: 0;
-    -fx-border-width: 2px;
+    -fx-border-width: 0;
     -fx-border-color: white;
 }
 
 #console Label {
-    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+    -fx-font-family: "Ubuntu Mono";
 }
 
 #command {
     -fx-border-width: 0;
-    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+    -fx-font-family: "Ubuntu Mono";
     -fx-border-radius: 0;
     -fx-text-fill: white;
     -fx-prompt-text-fill: lightgray;
@@ -63,7 +69,7 @@
     -fx-background-radius: 0 0 0 0;
     -fx-background-color: rgba(0, 0, 0, 0);
     -fx-text-fill: white;
-    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+    -fx-font-family: "Ubuntu Mono";
     -fx-pref-height: 100%;
 }
 
@@ -76,14 +82,14 @@
 }
 
 #status {
-    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+    -fx-font-family: "Ubuntu Mono";
 }
 
 #menuBar {
     -fx-background-color: black;
     -fx-background-radius: 0;
     -fx-border-radius: 0;
-    -fx-font-family: "Ubuntu Mono", "Consolas", "Monaco", monospace;
+    -fx-font-family: "Ubuntu Mono";
 }
 
 #consoleMenuItem .label {
